@@ -6,7 +6,7 @@ function Message() {
     <>
       <button
         onClick={() => setIsActive(!isActive)}
-        className="relative outline outline-2 bg-gradient-to-t from-blue-500 to-blue-900 ml-5 px-8 py-2 rounded-2xl"
+        className="relative outline outline-2 bg-gradient-to-t from-blue-500 to-blue-900 ml-5 px-4 py-1 text-sm rounded-2xl"
       >
         Message
         {isActive && (

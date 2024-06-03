@@ -7,13 +7,32 @@ import Footer from "./components/footer/Footer";
 import FeatruesTab from "./components/problemsAndFeatures/FeatruesTab";
 import WhyCleverBook from "./components/whySomeoneShouldChoose/WhyCleverBook";
 import NavBar from "./components/navbar/Navbar";
+import { useMotionValueEvent, useScroll } from "framer-motion";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [visible, setVisible] = useState(true);
+  const { scrollYProgress } = useScroll();
+
+  useMotionValueEvent(scrollYProgress, "change", (current) => {
+    // Check if current is not undefined and is a number
+    if (typeof current === "number") {
+      let direction = current - scrollYProgress.getPrevious();
+
+      if (scrollYProgress.get() < 0) {
+        setVisible(false);
+      } else {
+        if (direction < 0) {
+          setVisible(true);
+        } else {
+          setVisible(false);
+        }
+      }
+    }
+  });
 
   return (
     <div className="bg-zinc-900 text-white">
-      <NavBar />
+      <NavBar visible={visible} />
       <HeroSection />
       <KeyProblems />
       <WhyCleverBook />
