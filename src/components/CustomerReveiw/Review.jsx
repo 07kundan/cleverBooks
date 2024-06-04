@@ -7,19 +7,19 @@ import Book from "../../assets/Book.jpg";
 
 const content = [
   {
-    text: "D2C brands face issues with supply chain management and high growth startups are not equipped to run their demand forecast manually. Crest automates all the workflows and helps brands predict high demand periods and be ready to cater to customer demands. It has a direct impact on the revenue readiness of a company and that's the value we see Crest unlocking for many companies in the future. Rahul and team have built a robust product with years of their experience distilled into the workflows.",
+    text: "As someone who devours books like they're going out of style, CleverBook has been a game-changer. Their vast library offers something for every mood and interest, from classic novels to the latest bestsellers. I love the personalized recommendations that help me discover hidden gems, and the ability to adjust font size and background lighting makes reading a truly comfortable experience. Plus, the offline functionality ensures I can always get my reading fix, even on flights or during commutes. Overall, CleverBook is an amazing platform for book lovers like me!",
     author: "Diksha Pande",
     role: "Co-founder, Samosa Party",
     image: Profile1, // Placeholder image URL
   },
   {
-    text: "D2C brands face issues to cater to customer demands. It has a direct impact on the revenue readiness of a company and that's the value we see Crest unlocking for many companies in the future. Rahul and team have built a robust product with years of their experience distilled into the workflows.",
+    text: "CleverBook isn't just about entertainment; it's a fantastic tool for lifelong learning. Their extensive collection of non-fiction titles, audiobooks, and even educational articles allows me to explore new subjects and expand my knowledge base. The curated reading lists on various topics are fantastic for focused learning, and the note-taking and highlighting features make it easy to retain key information. Whether you're a student, a professional looking to stay updated, or simply curious about the world, CleverBook is an invaluable resource.",
     author: "Diksha ",
     role: "Co-founder, Samosa ",
     image: Profile2, // Placeholder image URL
   },
   {
-    text: "D2C brands face issues with supply chain management and high growth startups are not equipped to run their demand forecast manually. Crest automates all the workflows and helps brands predict high demand pef their experience distilled into the workflows.",
+    text: "With kids of different ages, finding reading materials that cater to everyone can be a challenge. CleverBook solves this problem perfectly! Their curated children's section offers age-appropriate books, interactive stories, and even educational games that keep my kids engaged and entertained. It's a fantastic way to instill a love of reading from a young age. Plus, the parental controls allow me to monitor their online activity and ensure they're accessing safe and enriching content. CleverBook has become a wonderful way to bond with my family over a shared love of reading.",
     author: " Pande",
     role: "Co-founder,  Party",
     image: Profile3, // Placeholder image URL
@@ -45,16 +45,16 @@ function Review() {
     <div className="font-mono tracking-tighter min-h-screen lg:h-screen flex flex-col-reverse justify-between gap-10 p-4 py-6 lg:flex-row  lg:py-12 lg:p-10 lg:gap-0">
       {/* left section */}
       <div className="flex flex-col space-y-8 lg:flex-1 lg:max-w-3xl ">
-        <div className="relative h-96 lg:h-76">
+        <div className="p-3 relative h-[50vh] lg:h-76">
           {content.map((item, index) => (
             <div
               key={index}
-              className={`absolute transition-opacity duration-700 ease-in-out lg:space-y-12 ${
+              className={`absolute transition-opacity duration-700 space-y-4 ease-in-out lg:space-y-12 ${
                 index === currentIndex ? "opacity-100" : "opacity-0"
               }`}
             >
               {/* descrioption */}
-              <p className="text-lg">{item.text}</p>
+              <p className="text-base lg:text-lg">{item.text}</p>
 
               {/* person */}
               <div className="flex items-center mt-4">
@@ -104,7 +104,7 @@ function Review() {
             </div>
           </button>
 
-          <button onClick={prevSlide} className="p-[2px] relative">
+          <button className="p-[2px] relative">
             <div className="absolute inset-0 bg-gradient-to-r rounded-full from-indigo-500 to-purple-500 lg:rounded-3xl" />
             <div className="px-8 py-3 lg:px-16 lg:py-4 rounded-full  bg-black lg:rounded-3xl relative group transition duration-200 text-white">
               <span className="text-xl font-bold">Read Story</span>{" "}
@@ -115,14 +115,14 @@ function Review() {
 
           {/*for small screen arrows */}
           <div className="flex items-center gap-4 mr-8 lg:hidden ">
-            <button onClick={nextSlide} className="p-[2px] relative h-10 w-10">
+            <button onClick={prevSlide} className="p-[2px] relative h-10 w-10">
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full" />
               <div className="h-full w-full bg-black rounded-full relative flex items-center justify-center group transition duration-200 text-white hover:bg-transparent">
                 &lt;
               </div>
             </button>
 
-            <button className="p-[2px] relative h-10 w-10">
+            <button onClick={nextSlide} className="p-[2px] relative h-10 w-10">
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full" />
               <div className="h-full w-full bg-black rounded-full relative flex items-center justify-center group transition duration-200 text-white hover:bg-transparent">
                 &gt;

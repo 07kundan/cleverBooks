@@ -5,7 +5,7 @@ import { BackgroundBeams } from "../ui/background-beams";
 
 function HeroSection() {
   return (
-    <div className="relative h-screen  flex flex-col-reverse items-center bg-gradient-to-br from-blue-300 to-blue-900/50 rounded-3xl lg:rounded-ee-full lg:pt-20 lg:flex-row">
+    <div className="relative h-screen flex flex-col-reverse items-center bg-zinc-800/70 rounded-se-[15rem] lg:rounded-ee-full lg:pt-20 lg:flex-row">
       <BackgroundBeams />
 
       {/* Message */}
@@ -16,8 +16,12 @@ function HeroSection() {
       {/* Left-section */}
       <div className="h-[55%] py-8 text-center space-y-12 lg:space-y-20 lg:p-3 lg:h-fit lg:w-1/2 lg:pl-12">
         <div className="space-y-8 text-left pl-6 lg:pl-0">
-          <h1 className="font-poetsen leading-loose text-xl font-semibold lg:text-3xl lg:font-bold ">
-            Meet the Clever Book -:
+          <h1 className="font-poetsen leading-loose text-xl font-semibold lg:text-3xl lg:font-bold lg:space-y-2">
+            Meet the{" "}
+            <span className="bg-gradient-to-r from-indigo-500/80 to-purple-500/80 px-2 py-1 rounded-md text-black">
+              Clever Book
+            </span>{" "}
+            -:
             <p className="lg:pl-24 lg:text-2xl">
               Your Ultimate Learning Companion
             </p>
