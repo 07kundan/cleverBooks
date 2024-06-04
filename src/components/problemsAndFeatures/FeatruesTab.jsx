@@ -52,10 +52,7 @@ function FeatruesTab() {
   }, [isInView, isIndex]);
 
   return (
-    <section
-      ref={ref}
-      className="text-center space-y-8 py-8 lg:space-y-10 lg:py-16 font-mono"
-    >
+    <section id="Featrues" ref={ref} className="text-center py-16  font-mono">
       {/* heading */}
       <h2 className="font-poetsen px-8 lg:text-3xl lg:leading-relaxed tracking-tight lg:px-0">
         Discover{" "}
@@ -125,7 +122,7 @@ function FeatruesTab() {
       {/* -------- */}
 
       {/* button */}
-      <button className="p-[2px] relative font-bold tracking-tighter">
+      <button className="p-[2px] relative font-bold tracking-tighter mt-10">
         <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full" />
         <div className="px-8 py-2  bg-black rounded-full  relative group transition duration-200 text-white hover:bg-transparent">
           View all features

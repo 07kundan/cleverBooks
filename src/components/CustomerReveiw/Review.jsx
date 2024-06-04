@@ -42,79 +42,40 @@ function Review() {
   };
 
   return (
-    <div className="font-mono tracking-tighter min-h-screen lg:h-screen flex flex-col-reverse justify-between gap-10 p-4 py-6 lg:flex-row  lg:py-12 lg:p-10 lg:gap-0">
-      {/* left section */}
-      <div className="flex flex-col space-y-8 lg:flex-1 lg:max-w-3xl ">
-        <div className="p-3 relative h-[50vh] lg:h-76">
-          {content.map((item, index) => (
-            <div
-              key={index}
-              className={`absolute transition-opacity duration-700 space-y-4 ease-in-out lg:space-y-12 ${
-                index === currentIndex ? "opacity-100" : "opacity-0"
-              }`}
-            >
-              {/* descrioption */}
-              <p className="text-base lg:text-lg">{item.text}</p>
+    <div id="Reviews" className="py-16 lg:px-10 ">
+      <h2 className="font-poetsen text-center text-3xl"> Reviews</h2>
+      <div className="font-mono tracking-tighter min-h-screen lg:h-screen flex flex-col-reverse justify-between gap-10 p-4 py-6 lg:flex-row lg:gap-0">
+        {/* left section */}
+        <div className="lg:flex-1 lg:max-w-3xl">
+          <div className="p-3 relative h-[50vh] lg:h-80">
+            {content.map((item, index) => (
+              <div
+                key={index}
+                className={`absolute transition-opacity duration-700 space-y-4 ease-in-out lg:space-y-12 ${
+                  index === currentIndex ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                {/* descrioption */}
+                <p className="text-base lg:text-lg">{item.text}</p>
 
-              {/* person */}
-              <div className="flex items-center mt-4">
-                <img
-                  className="w-12 h-12 rounded-full mr-4"
-                  src={item.image}
-                  alt={item.author}
-                />
-                <div>
-                  <p className="font-poetsen">{item.author}</p>
-                  <p className="">{item.role}</p>
+                {/* person */}
+                <div className="flex items-center mt-4">
+                  <img
+                    className="w-12 h-12 rounded-full mr-4"
+                    src={item.image}
+                    alt={item.author}
+                  />
+                  <div>
+                    <p className="font-poetsen">{item.author}</p>
+                    <p className="">{item.role}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        {/* arrows */}
-        <div className="pl-7 hidden lg:flex justify-start lg:gap-4">
-          <button onClick={prevSlide} className="p-[2px] relative h-10 w-10">
-            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full" />
-            <div className="h-full w-full bg-black rounded-full relative flex items-center justify-center group transition duration-200 text-white hover:bg-transparent">
-              &lt;
-            </div>
-          </button>
-
-          <button onClick={nextSlide} className="p-[2px] relative h-10 w-10">
-            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full" />
-            <div className="h-full w-full bg-black rounded-full relative flex items-center justify-center group transition duration-200 text-white hover:bg-transparent">
-              &gt;
-            </div>
-          </button>
-        </div>
-
-        {/* below button */}
-        <div className="flex flex-wrap justify-around gap-y-7 lg:flex-nowrap lg:gap-0 lg:justify-around lg:items-center">
-          <button className="">
-            <div className="px-8 py-4 rounded-xl lg:px-14 lg:py-4 bg-gradient-to-r from-indigo-500 to-purple-500 lg:rounded-3xl">
-              <p className="font-bold text-xl">Upto 95%</p>
-              <p className="text-sm">Demand Fulfilment</p>
-            </div>
-          </button>
-          <button className="">
-            <div className="px-8 py-4 rounded-xl lg:px-14 lg:py-4 bg-gradient-to-r from-indigo-500 to-purple-500 lg:rounded-3xl">
-              <p className="font-bold text-xl">&lt; 3%</p>
-              <p className="text-sm">Daily Stock-out</p>
-            </div>
-          </button>
-
-          <button className="p-[2px] relative">
-            <div className="absolute inset-0 bg-gradient-to-r rounded-full from-indigo-500 to-purple-500 lg:rounded-3xl" />
-            <div className="px-8 py-3 lg:px-16 lg:py-4 rounded-full  bg-black lg:rounded-3xl relative group transition duration-200 text-white">
-              <span className="text-xl font-bold">Read Story</span>{" "}
-              <br className="hidden lg:block" />
-              &rarr;
-            </div>
-          </button>
-
-          {/*for small screen arrows */}
-          <div className="flex items-center gap-4 mr-8 lg:hidden ">
+          {/* arrows */}
+          <div className="pl-7 my-8 hidden lg:flex justify-start lg:gap-4">
             <button onClick={prevSlide} className="p-[2px] relative h-10 w-10">
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full" />
               <div className="h-full w-full bg-black rounded-full relative flex items-center justify-center group transition duration-200 text-white hover:bg-transparent">
@@ -129,17 +90,65 @@ function Review() {
               </div>
             </button>
           </div>
-          {/* ------- */}
-        </div>
-      </div>
 
-      {/* right image */}
-      <div className=" w-full flex justify-center items-center mt-8 md:mt-0 lg:w-[30%]">
-        <img
-          className="w-[70%] h-auto rounded-3xl lg:w-full"
-          src={`${Book}`}
-          alt="Samosa Party"
-        />
+          {/* below button */}
+          <div className=" flex flex-wrap justify-around gap-y-7 lg:flex-nowrap lg:gap-0 lg:justify-around lg:items-center">
+            <button className="">
+              <div className="px-8 py-4 rounded-xl lg:px-14 lg:py-4 bg-gradient-to-r from-indigo-500 to-purple-500 lg:rounded-3xl">
+                <p className="font-bold text-xl">Upto 95%</p>
+                <p className="text-sm">Demand Fulfilment</p>
+              </div>
+            </button>
+            <button className="">
+              <div className="px-8 py-4 rounded-xl lg:px-14 lg:py-4 bg-gradient-to-r from-indigo-500 to-purple-500 lg:rounded-3xl">
+                <p className="font-bold text-xl">&lt; 3%</p>
+                <p className="text-sm">Daily Stock-out</p>
+              </div>
+            </button>
+
+            <button className="p-[2px] relative">
+              <div className="absolute inset-0 bg-gradient-to-r rounded-full from-indigo-500 to-purple-500 lg:rounded-3xl" />
+              <div className="px-8 py-3 lg:px-16 lg:py-4 rounded-full  bg-black lg:rounded-3xl relative group transition duration-200 text-white">
+                <span className="text-xl font-bold">Read Story</span>{" "}
+                <br className="hidden lg:block" />
+                &rarr;
+              </div>
+            </button>
+
+            {/*for small screen arrows */}
+            <div className="flex items-center gap-4 mr-8 lg:hidden ">
+              <button
+                onClick={prevSlide}
+                className="p-[2px] relative h-10 w-10"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full" />
+                <div className="h-full w-full bg-black rounded-full relative flex items-center justify-center group transition duration-200 text-white hover:bg-transparent">
+                  &lt;
+                </div>
+              </button>
+
+              <button
+                onClick={nextSlide}
+                className="p-[2px] relative h-10 w-10"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full" />
+                <div className="h-full w-full bg-black rounded-full relative flex items-center justify-center group transition duration-200 text-white hover:bg-transparent">
+                  &gt;
+                </div>
+              </button>
+            </div>
+            {/* ------- */}
+          </div>
+        </div>
+
+        {/* right image */}
+        <div className=" w-full flex justify-center items-center mt-8 md:mt-0 lg:w-[30%]">
+          <img
+            className="w-[70%] h-auto rounded-3xl lg:w-full"
+            src={`${Book}`}
+            alt="Samosa Party"
+          />
+        </div>
       </div>
     </div>
   );

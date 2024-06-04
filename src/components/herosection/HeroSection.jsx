@@ -5,7 +5,10 @@ import { BackgroundBeams } from "../ui/background-beams";
 
 function HeroSection() {
   return (
-    <div className="relative h-screen flex flex-col-reverse items-center bg-zinc-800/70 rounded-se-[15rem] lg:rounded-ee-full lg:pt-20 lg:flex-row">
+    <div
+      id="Home"
+      className="relative h-screen flex flex-col-reverse items-center bg-zinc-800/70 rounded-se-[15rem] lg:rounded-ee-full lg:pt-20 lg:flex-row"
+    >
       <BackgroundBeams />
 
       {/* Message */}

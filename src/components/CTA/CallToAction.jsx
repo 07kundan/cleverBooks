@@ -5,7 +5,7 @@ function CallToAction() {
   const [signUpActive, setSignUpActive] = useState(false);
   return (
     <>
-      <div className="relative py-20 lg:py-28 ">
+      <div id="CTA" className="relative py-20 lg:py-28 ">
         {/* body */}
         <div className="w-[86%] bg-gradient-to-r from-indigo-500 to-purple-500 space-y-6 m-auto text-center px-8 py-8 rounded-3xl lg:w-[85%] lg:py-32 lg:space-y-10">
           {/* main */}

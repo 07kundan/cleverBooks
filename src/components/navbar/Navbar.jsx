@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { IoMdCart } from "react-icons/io";
-import { SiHomeassistantcommunitystore } from "react-icons/si";
-import { CgLogIn, CgMenuBoxed } from "react-icons/cg";
+import { CgMenuBoxed } from "react-icons/cg";
 import Png1 from "../../assets/Png1.png";
 
 const NavItems = [
-  { name: "Product", icon: <SiHomeassistantcommunitystore /> },
-  { name: "Pricing", icon: <CgLogIn /> },
-  { name: "Industry", icon: <IoMdCart /> },
-  { name: "Customer Service", icon: <IoMdCart /> },
-  { name: "About", icon: <IoMdCart /> },
-  { name: "Blog", icon: <IoMdCart /> },
+  { name: "Home" },
+  { name: "Issues solved by CleverBook" },
+  { name: "WhyCleverBook" },
+  { name: "Reviews" },
+  { name: "Featrues" },
+  { name: "CTA" },
 ];
 
 function NavBar({ visible }) {
@@ -27,6 +25,21 @@ function NavBar({ visible }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const [menubar, setMenubar] = useState(false);
+
+  const handlePage = (index) => {
+    const element = document.getElementById(index.name);
+    if (element) {
+      window.scrollTo({
+        // top: element.offsetHeight * index.index,
+
+        top: element.offsetTop + (window.innerWidth < 768 ? 0 : 20),
+        behavior: "smooth",
+      });
+    }
+    setMenuIsActive(false);
+  };
+
   return (
     <>
       <motion.div
@@ -38,7 +51,7 @@ function NavBar({ visible }) {
           ease: "linear",
           duration: 0.3,
         }}
-        className="w-[95vw] m-auto p-2 px-8 flex justify-between items-center z-30 bg-transparent/80 fixed top-2 left-1/2 rounded-2xl lg:justify-around lg:p-2.5 lg:px-5 lg:w-[92vw]"
+        className="w-[95vw] m-auto p-2 px-8 flex justify-between items-center z-30 bg-transparent/80 fixed top-2 left-1/2 rounded-2xl lg:justify-around lg:p-2.5 lg:px-5 lg:w-[92vw] "
       >
         {/* Name */}
         <motion.span
@@ -88,15 +101,21 @@ function NavBar({ visible }) {
       </motion.div>
 
       {menuIsActive && (
-        <div className="h-screen w-full text-lg bg-lime-50 text-black absolute top-0 z-10 text-center space-y-12 pt-32 px-8">
-          <div className="space-y-8 ">
+        <div className="h-screen w-full text-lg bg-transparent/90 fixed top-0 z-10 text-center space-y-12 pt-32 px-12">
+          <div className="space-y-8 text-xl font-mono font-extrabold tracking-tighter">
             {NavItems.map((item) => (
-              <div className="text-left" key={item.name}>
+              <button
+                onClick={() => {
+                  handlePage(item);
+                }}
+                className="text-left block"
+                key={item.name}
+              >
                 {item.name}
-              </div>
+              </button>
             ))}
           </div>
-          <button className="bg-red-600 px-4 py-1.5 rounded-xl">
+          <button className="font-poetsen rounded-2xl bg-gradient-to-r from-indigo-500 to-purple-500 px-6 py-2">
             Contact Us
           </button>
         </div>

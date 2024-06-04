@@ -91,6 +91,7 @@ export default function WhyCleverBook() {
 
   return (
     <motion.div
+      id="WhyCleverBook"
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}

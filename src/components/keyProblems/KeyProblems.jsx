@@ -36,7 +36,10 @@ const content = [
 
 function KeyProblems() {
   return (
-    <section className="py-6 px-4 space-y-7 lg:min-h-screen lg:flex lg:flex-col lg:justify-center lg:items-center lg:gap-12">
+    <section
+      id="Issues solved by CleverBook"
+      className="py-16 px-4 space-y-14 lg:space-y-4 lg:min-h-screen lg:flex lg:flex-col lg:justify-center lg:items-center lg:gap-12"
+    >
       <h2 className="text-center lg:text-3xl font-bold tracking-tight font-poetsen">
         Some key issues that{" "}
         <span className="bg-gradient-to-r mx-1.5 from-indigo-500/80 to-purple-500/80 px-2 py-1 rounded-lg text-black">
