@@ -58,7 +58,11 @@ function FeatruesTab() {
     >
       {/* heading */}
       <h2 className="font-poetsen px-8 lg:text-3xl lg:leading-relaxed tracking-tight lg:px-0">
-        Discover CleverBook: The Ultimate Online Bookstore for Every Reader
+        Discover{" "}
+        <span className="bg-gradient-to-r mx-1.5 from-indigo-500/80 to-purple-500/80 px-2 py-1 rounded-lg text-black">
+          CleverBook
+        </span>
+        : The Ultimate Online Bookstore for Every Reader
       </h2>
 
       {/* main  */}

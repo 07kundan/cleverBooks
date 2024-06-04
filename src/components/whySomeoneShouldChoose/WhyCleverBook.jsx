@@ -12,7 +12,7 @@ import { StickyScroll } from "../ui/sticky-scroll-reveal";
 
 const content = [
   {
-    name: "Variety",
+    name: "Books",
     title: "Extensive Genre Collection",
     content: 10,
   },
@@ -136,24 +136,24 @@ export default function WhyCleverBook() {
         {/* Right body */}
         <div className=" text-center h-1/2 flex justify-center items-center pt-8 lg:p-0 ">
           <div className=" space-y-8">
-            {content[activeCard].name === "Variety" && (
+            {content[activeCard].name === "Books" && (
               <>
-                <div className="text-8xl">
+                <div className="text-8xl font-extrabold">
                   {countdown}
-                  <span className="text-2xl lg:text-2xl">K+</span>
+                  <span className="text-2xl lg:text-5xl">K+</span>
                 </div>
-                <div className="text-xl lg:text-3xl font-poetsen">
+                <div className="text-xl lg:text-3xl font-poetsen bg-gradient-to-r mx-2 from-indigo-500/80 to-purple-500/80 px-4 py-2 rounded-lg text-neutral-950">
                   {content[activeCard].title}
                 </div>
               </>
             )}
             {content[activeCard].name === "Plan" && (
               <>
-                <div className="text-8xl">
+                <div className="text-8xl font-extrabold">
                   {countdown}
-                  <span className="text-2xl lg:text-2xl">Rs Monthly</span>
+                  <span className="text-2xl lg:text-5xl">Rs Monthly</span>
                 </div>
-                <div className="text-xl lg:text-3xl font-poetsen">
+                <div className="text-xl lg:text-3xl font-poetsen bg-gradient-to-r mx-2 from-indigo-500/80 to-purple-500/80 px-4 py-2 rounded-lg text-neutral-950">
                   {content[activeCard].title}
                 </div>
               </>
@@ -161,14 +161,14 @@ export default function WhyCleverBook() {
 
             {content[activeCard].name === "Ratings" && (
               <>
-                <div className="text-8xl flex justify-center items-end">
+                <div className="text-8xl flex justify-center items-end font-extrabold">
                   {countdown}
-                  <span className="text-4xl lg:text-2xl">/5</span>
+                  <span className="text-4xl lg:text-5xl">/5</span>
                   <span className="text-yellow-600 text-4xl pl-3">
                     <FaStar />
                   </span>
                 </div>
-                <div className="text-xl lg:text-3xl font-poetsen">
+                <div className="text-xl lg:text-3xl font-poetsen bg-gradient-to-r mx-2 from-indigo-500/80 to-purple-500/80 px-4 py-2 rounded-lg text-neutral-950">
                   {content[activeCard].title}
                 </div>
               </>

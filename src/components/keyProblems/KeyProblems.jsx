@@ -35,27 +35,24 @@ const content = [
 ];
 
 function KeyProblems() {
-  // const gradientTextStyle = {
-  //   background: "linear-gradient(to right, red, blue)",
-  //   WebkitBackgroundClip: "text",
-  //   WebkitTextFillColor: "transparent",
-  // };
-
   return (
     <section className="py-6 px-4 space-y-7 lg:min-h-screen lg:flex lg:flex-col lg:justify-center lg:items-center lg:gap-12">
       <h2 className="text-center lg:text-3xl font-bold tracking-tight font-poetsen">
-        Some key issues that CleverBook, aims to target and solve
+        Some key issues that{" "}
+        <span className="bg-gradient-to-r mx-1.5 from-indigo-500/80 to-purple-500/80 px-2 py-1 rounded-lg text-black">
+          CleverBook
+        </span>
+        , aims to target and solve
       </h2>
 
       <div className="w-full flex flex-col lg:flex-row lg:justify-center gap-6 ">
         {content.map((item) => (
           <div
             key={item.title}
-            className="font-mono p-5 space-y-2 bg-transparent/50 rounded-3xl lg:py-8 lg:space-y-4 lg:min-h-[60vh] lg:w-[22%] "
+            className="font-mono p-5 space-y-2 bg-transparent/40 rounded-3xl lg:py-8 lg:space-y-4 lg:min-h-[60vh] lg:w-[22%] "
           >
             <div
-              // style={gradientTextStyle}
-              className={`${styles.gradientText} pl-4 text-5xl font-semibold`}
+              className={` pl-4 text-5xl font-semibold bg-gradient-to-r from-indigo-500 to-purple-500 inline-block px-3 py-2 rounded-md text-black`}
             >
               {item.icon}
             </div>

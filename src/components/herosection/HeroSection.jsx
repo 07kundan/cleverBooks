@@ -18,8 +18,8 @@ function HeroSection() {
         <div className="space-y-8 text-left pl-6 lg:pl-0">
           <h1 className="font-poetsen leading-loose text-xl font-semibold lg:text-3xl lg:font-bold lg:space-y-2">
             Meet the{" "}
-            <span className="bg-gradient-to-r from-indigo-500/80 to-purple-500/80 px-2 py-1 rounded-md text-black">
-              Clever Book
+            <span className="bg-gradient-to-r mx-1 from-indigo-500 to-purple-500 px-2 py-1 rounded-lg text-black">
+              CleverBook
             </span>{" "}
             -:
             <p className="lg:pl-24 lg:text-2xl">
