@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./Carousel.css"; // Import the CSS file for custom styles
 import Profile1 from "../../assets/Profile1.jpg";
 import Profile2 from "../../assets/Profile2.jpg";
 import Profile3 from "../../assets/Profile3.jpg";
