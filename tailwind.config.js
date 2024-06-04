@@ -11,7 +11,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        robot: ["Roboto", "sans-serif"],
+        poetsen: ["Poetsen One", "sans-serif"],
+      }
+
+    },
   },
   plugins: [addVariablesForColors],
 }

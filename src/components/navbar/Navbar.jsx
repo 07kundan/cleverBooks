@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { IoMdCart } from "react-icons/io";
 import { SiHomeassistantcommunitystore } from "react-icons/si";
 import { CgLogIn, CgMenuBoxed } from "react-icons/cg";
+import Png1 from "../../assets/Png1.png";
 
 const NavItems = [
   { name: "Product", icon: <SiHomeassistantcommunitystore /> },
@@ -15,6 +16,16 @@ const NavItems = [
 
 function NavBar({ visible }) {
   const [menuIsActive, setMenuIsActive] = useState(false);
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1024);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth > 1024);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <>
@@ -27,22 +38,21 @@ function NavBar({ visible }) {
           ease: "linear",
           duration: 0.3,
         }}
-        className="w-[95%] p-2 px-8 flex m-auto justify-between items-center z-30
-      bg-transparent/50 fixed top-4 left-1/2 -translate-x-1/2 rounded-2xl lg:justify-around lg:p-3 lg:px-5
-      lg:w-[92vw] lg:top-2 "
+        className="w-[95vw] m-auto p-2 px-8 flex justify-between items-center z-30 bg-transparent/80 fixed top-2 left-1/2 rounded-2xl lg:justify-around lg:p-2.5 lg:px-5 lg:w-[92vw]"
       >
         {/* Name */}
         <motion.span
-          initial={{ rotateZ: 2 }}
+          initial={{ rotateZ: 6 }}
           animate={{
-            rotateZ: -6,
+            rotateZ: 0,
           }}
           transition={{
             ease: "backIn",
             duration: 0.5,
           }}
-          className="pb-3 text-2xl underline underline-offset-2 -rotate-6 w-fit font-semibold tracking-tighter"
+          className="flex  items-center gap-1 text-xl leading-10 w-fit font-semibold tracking-tighter"
         >
+          <img className="h-8" src={`${Png1}`} alt="" />
           Clever Books
         </motion.span>
         {/* dots */}
@@ -57,9 +67,9 @@ function NavBar({ visible }) {
 
         {/* ------- */}
         {/*  For Big Screen */}
-        {window.innerWidth > 1024 && (
+        {isLargeScreen && (
           <>
-            <div className=" flex justify-around gap-8 p-1 px-3">
+            <div className="flex justify-around gap-8 p-1 px-3">
               {/* Routes */}
               {NavItems.map((item) => (
                 <span key={item.name}>{item.name}</span>
@@ -68,10 +78,10 @@ function NavBar({ visible }) {
             </div>
 
             <div className="space-x-6">
-              <span>Login</span>
-              <span className="bg-red-600 px-4 py-1.5 rounded-xl">
-                Contact Us
-              </span>
+              <button>Login</button>
+              <button className="px-6 py-1.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full">
+                Lit up borders
+              </button>
             </div>
           </>
         )}

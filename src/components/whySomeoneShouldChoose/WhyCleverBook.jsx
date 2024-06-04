@@ -5,6 +5,8 @@ import {
   useMotionValueEvent,
   useScroll,
 } from "framer-motion";
+import Png1 from "../../assets/Png1.png";
+import { FaStar } from "react-icons/fa";
 
 import { StickyScroll } from "../ui/sticky-scroll-reveal";
 
@@ -40,7 +42,6 @@ export default function WhyCleverBook() {
   const contentLength = content.length;
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    console.log("ScrollYProgress change detected:", latest);
     setScrollValue(latest);
     const cardsBreakpoints = content.map((_, index) => index / contentLength);
     const closestBreakpointIndex = cardsBreakpoints.reduce(
@@ -57,7 +58,7 @@ export default function WhyCleverBook() {
   });
 
   const backgroundColors = [
-    "var(--slate-900)",
+    "var(--neutral-900)",
     "var(--black)",
     "var(--neutral-900)",
   ];
@@ -93,7 +94,7 @@ export default function WhyCleverBook() {
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="min-h-[300vh] max-h-[300vh]  relative"
+      className="min-h-[300vh] max-h-[300vh] relative"
       ref={ref}
     >
       <div className="h-screen sticky top-0 flex flex-col justify-center lg:gap-0 lg:flex-row lg:items-center ">
@@ -102,26 +103,30 @@ export default function WhyCleverBook() {
           {/* left body */}
           <div className="flex items-center gap-10 tracking-tighter text-xl">
             {/* scroll bar */}
-            <div className="transform -translate-x-1/2 bg-gray-200 w-1 h-full rounded-full overflow-hidden">
+            <div className="transform -translate-x-1/2 bg-gradient-to-t from-indigo-500 to-purple-500 w-1 h-[90%] rounded-full relative">
               <div
-                className="bg-blue-500 h-full"
-                style={{ height: `${scrollValue * 100}%` }}
-              ></div>
+                className="absolute h-10 w-10 left-1/2 -translate-x-1/2 p-1 bg-transparent/80 rounded-full"
+                style={{ top: `${scrollValue * 100}%` }}
+              >
+                <img className="h-full" src={`${Png1}`} alt="" />
+              </div>
             </div>
             {/* ---------- */}
 
             {/* texts */}
             <div className="space-y-5">
               {content.map((item, index) => (
-                <div key={item.title + index} className="">
-                  <motion.h2
-                    className={`${
-                      activeCard === index ? "border" : null
-                    } px-6 py-2 rounded-full`}
-                  >
+                <button
+                  key={item.title}
+                  className="p-[3px] relative flex flex-col"
+                >
+                  {activeCard === index && (
+                    <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full" />
+                  )}
+                  <div className="px-8 py-2  bg-black rounded-full  relative group transition duration-200 text-white ">
                     {item.name}
-                  </motion.h2>
-                </div>
+                  </div>
+                </button>
               ))}
             </div>
             {/* ---------- */}
@@ -129,15 +134,15 @@ export default function WhyCleverBook() {
         </div>
 
         {/* Right body */}
-        <div className="text-center h-1/2 flex justify-center items-center pt-12 lg:p-0 ">
+        <div className=" text-center h-1/2 flex justify-center items-center pt-8 lg:p-0 ">
           <div className=" space-y-8">
             {content[activeCard].name === "Variety" && (
               <>
                 <div className="text-8xl">
                   {countdown}
-                  <span className="text-6xl">K+</span>
+                  <span className="text-2xl lg:text-2xl">K+</span>
                 </div>
-                <div className="text-2xl font-semibold">
+                <div className="text-xl lg:text-3xl font-poetsen">
                   {content[activeCard].title}
                 </div>
               </>
@@ -146,9 +151,9 @@ export default function WhyCleverBook() {
               <>
                 <div className="text-8xl">
                   {countdown}
-                  <span className="text-2xl">Rs Monthly</span>
+                  <span className="text-2xl lg:text-2xl">Rs Monthly</span>
                 </div>
-                <div className="text-2xl font-semibold">
+                <div className="text-xl lg:text-3xl font-poetsen">
                   {content[activeCard].title}
                 </div>
               </>
@@ -156,11 +161,14 @@ export default function WhyCleverBook() {
 
             {content[activeCard].name === "Ratings" && (
               <>
-                <div className="text-8xl">
+                <div className="text-8xl flex justify-center items-end">
                   {countdown}
-                  <span className="text-6xl">/5</span>
+                  <span className="text-4xl lg:text-2xl">/5</span>
+                  <span className="text-yellow-600 text-4xl pl-3">
+                    <FaStar />
+                  </span>
                 </div>
-                <div className="text-2xl font-semibold">
+                <div className="text-xl lg:text-3xl font-poetsen">
                   {content[activeCard].title}
                 </div>
               </>
@@ -171,11 +179,3 @@ export default function WhyCleverBook() {
     </motion.div>
   );
 }
-
-// export default function WhyCleverBook() {
-//   return (
-//     <>
-//       <StickyScroll content={content} />
-//     </>
-//   );
-// }

@@ -1,29 +1,32 @@
 import React from "react";
 import { MdEmail, MdPhone } from "react-icons/md";
-import { RiShoppingCartFill } from "react-icons/ri";
 import { FaInstagram, FaLinkedin, FaGithub, FaHeart } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import Png1 from "../../assets/Png1.png";
 
 function Footer() {
   return (
-    <div className="h-[92vh] flex items-center bg-slate-900/70 rounded-t-3xl">
-      <div className=" p-3 pt-5 w-full space-y-9 lg:m-auto lg:space-y-2 lg:w-4/5">
+    <div className="font-mono h-[95vh] flex items-center bg-transparent/60 rounded-t-[3rem] ">
+      <div className="p-5 pt-5 w-full space-y-9 lg:space-y-0 lg:h-full lg:m-auto lg:flex lg:flex-col lg:justify-around lg:w-[87%]">
         {/* About */}
         <div className="text-lg lg:text-center p-2">
-          <h5 className="text-2xl font-bold underline underline-offset-4 inline">
+          <h5 className="text-2xl font-poetsen underline underline-offset-4 inline">
             About
           </h5>
           <span className="font-bold"> - : </span>
           <p className="inline">
-            ZED-KART, a brainchild of Kundan, aspiring to evolve into a fully
-            functional E-commerce platform with the grace of destiny.
+            CleverBook is your one-stop online bookstore offering a vast
+            collection of reading materials across all genres. From manga to
+            magazines, articles to newspapers, CleverBook ensures you have
+            access to a diverse range of content, catering to every reader's
+            preference.
           </p>
         </div>
 
         {/* Contact */}
         <div className=" lg:flex lg:justify-around lg:py-10">
           <div className=" flex flex-col justify-center">
-            <h5 className="text-center mb-2 font-bold text-xl underline underline-offset-4 lg:mb-5">
+            <h5 className="text-center mb-2 font-poetsen text-xl underline underline-offset-4 lg:mb-5">
               Contact Information
             </h5>
             <div className="text-lg px-2 ">
@@ -43,9 +46,9 @@ function Footer() {
           </div>
           <div className=" flex items-center justify-center gap-3 p-3 py-8 lg:p-0">
             <span className="text-8xl lg:text-9xl">
-              <RiShoppingCartFill />
+              <img className="h-32" src={`${Png1}`} alt="" />
             </span>
-            <p className="text-3xl font-extrabold">ZED-KART</p>
+            <p className="text-3xl font-extrabold">CleverBook</p>
           </div>
         </div>
 
