@@ -7,21 +7,21 @@ import Book from "../../assets/Book.jpg";
 
 const content = [
   {
-    text: "As someone who devours books like they're going out of style, CleverBook has been a game-changer. Their vast library offers something for every mood and interest, from classic novels to the latest bestsellers. I love the personalized recommendations that help me discover hidden gems, and the ability to adjust font size and background lighting makes reading a truly comfortable experience. Plus, the offline functionality ensures I can always get my reading fix, even on flights or during commutes. Overall, CleverBook is an amazing platform for book lovers like me!",
-    author: "Diksha Pande",
-    role: "Co-founder, Samosa Party",
+    text: "As someone who devours books like they're going out of style, CleverBook has been a game-changer. Their vast library offers something for every mood and interest, from classic novels to the latest bestsellers. I love the personalized recommendations that help me discover hidden gems, and the ability to adjust font size and background lighting makes reading a truly comfortable experience. ",
+    author: "Pyara Chuha",
+    role: "Co-founder, Chori",
     image: Profile1, // Placeholder image URL
   },
   {
-    text: "CleverBook isn't just about entertainment; it's a fantastic tool for lifelong learning. Their extensive collection of non-fiction titles, audiobooks, and even educational articles allows me to explore new subjects and expand my knowledge base. The curated reading lists on various topics are fantastic for focused learning, and the note-taking and highlighting features make it easy to retain key information. Whether you're a student, a professional looking to stay updated, or simply curious about the world, CleverBook is an invaluable resource.",
-    author: "Diksha ",
-    role: "Co-founder, Samosa ",
+    text: "CleverBook isn't just about entertainment; it's a fantastic tool for lifelong learning. Their extensive collection of non-fiction titles, audiobooks, and even educational articles allows me to explore new subjects and expand my knowledge base. The curated reading lists on various topics are fantastic for focused learning, and the note-taking and highlighting features make it easy to retain key information.",
+    author: "Shwet Bhed",
+    role: "Co-founder, Wool ",
     image: Profile2, // Placeholder image URL
   },
   {
-    text: "With kids of different ages, finding reading materials that cater to everyone can be a challenge. CleverBook solves this problem perfectly! Their curated children's section offers age-appropriate books, interactive stories, and even educational games that keep my kids engaged and entertained. It's a fantastic way to instill a love of reading from a young age. Plus, the parental controls allow me to monitor their online activity and ensure they're accessing safe and enriching content. CleverBook has become a wonderful way to bond with my family over a shared love of reading.",
-    author: " Pande",
-    role: "Co-founder,  Party",
+    text: "With kids of different ages, finding reading materials that cater to everyone can be a challenge. CleverBook solves this problem perfectly! Their curated children's section offers age-appropriate books, interactive stories, and even educational games that keep my kids engaged and entertained. It's a fantastic way to instill a love of reading from a young age.",
+    author: "Chalak Lomdi",
+    role: "Co-founder, Chalak",
     image: Profile3, // Placeholder image URL
   },
 ];
