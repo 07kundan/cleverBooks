@@ -50,7 +50,7 @@ function Review() {
             {content.map((item, index) => (
               <div
                 key={index}
-                className={`absolute transition-opacity duration-700 space-y-4 ease-in-out lg:space-y-12 ${
+                className={`absolute transition-opacity duration-700 space-y-12 ease-in-out ${
                   index === currentIndex ? "opacity-100" : "opacity-0"
                 }`}
               >

@@ -11,7 +11,7 @@ function Message() {
       >
         <PiNotificationBold />
         {isActive && (
-          <div className="absolute py-2 -left-80 top-1/2 -translate-y-1/2 w-72 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-md font-poetsen lg:left-12">
+          <div className="absolute py-2 -left-[19rem] top-1/2 -translate-y-1/2 w-72 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-md font-poetsen lg:left-12">
             I can further improve as per requirements
           </div>
         )}
