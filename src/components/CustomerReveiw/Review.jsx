@@ -74,14 +74,14 @@ function Review() {
 
         {/* arrows */}
         <div className="pl-7 hidden lg:flex justify-start lg:gap-4">
-          <button className="p-[2px] relative h-10 w-10">
+          <button onClick={prevSlide} className="p-[2px] relative h-10 w-10">
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full" />
             <div className="h-full w-full bg-black rounded-full relative flex items-center justify-center group transition duration-200 text-white hover:bg-transparent">
               &lt;
             </div>
           </button>
 
-          <button className="p-[2px] relative h-10 w-10">
+          <button onClick={nextSlide} className="p-[2px] relative h-10 w-10">
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full" />
             <div className="h-full w-full bg-black rounded-full relative flex items-center justify-center group transition duration-200 text-white hover:bg-transparent">
               &gt;
@@ -104,7 +104,7 @@ function Review() {
             </div>
           </button>
 
-          <button className="p-[2px] relative">
+          <button onClick={prevSlide} className="p-[2px] relative">
             <div className="absolute inset-0 bg-gradient-to-r rounded-full from-indigo-500 to-purple-500 lg:rounded-3xl" />
             <div className="px-8 py-3 lg:px-16 lg:py-4 rounded-full  bg-black lg:rounded-3xl relative group transition duration-200 text-white">
               <span className="text-xl font-bold">Read Story</span>{" "}
@@ -115,7 +115,7 @@ function Review() {
 
           {/*for small screen arrows */}
           <div className="flex items-center gap-4 mr-8 lg:hidden ">
-            <button className="p-[2px] relative h-10 w-10">
+            <button onClick={nextSlide} className="p-[2px] relative h-10 w-10">
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full" />
               <div className="h-full w-full bg-black rounded-full relative flex items-center justify-center group transition duration-200 text-white hover:bg-transparent">
                 &lt;
