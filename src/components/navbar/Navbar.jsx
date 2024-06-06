@@ -5,7 +5,7 @@ import Png1 from "../../assets/Png1.png";
 
 const NavItems = [
   { name: "Home" },
-  { name: "Issues solved by CleverBook" },
+  { name: "KeyFeatures" },
   { name: "WhyCleverBook" },
   { name: "Reviews" },
   { name: "Featrues" },
@@ -24,8 +24,6 @@ function NavBar({ visible }) {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  const [menubar, setMenubar] = useState(false);
 
   const handlePage = (index) => {
     const element = document.getElementById(index.name);
@@ -82,10 +80,18 @@ function NavBar({ visible }) {
         {/*  For Big Screen */}
         {isLargeScreen && (
           <>
-            <div className="flex justify-around gap-8 p-1 px-3">
+            <div className="flex justify-around gap-4 p-1 px-3">
               {/* Routes */}
               {NavItems.map((item) => (
-                <span key={item.name}>{item.name}</span>
+                <button
+                  className="text-base hover:underline underline-offset-2"
+                  onClick={() => {
+                    handlePage(item);
+                  }}
+                  key={item.name}
+                >
+                  {item.name}
+                </button>
               ))}
               {/* -------------- */}
             </div>
@@ -100,6 +106,7 @@ function NavBar({ visible }) {
         )}
       </motion.div>
 
+      {/* smaller screen */}
       {menuIsActive && (
         <div className="h-screen w-full text-lg bg-transparent/90 fixed top-0 z-10 text-center space-y-12 pt-32 px-12">
           <div className="space-y-8 text-xl font-mono font-extrabold tracking-tighter">

@@ -37,7 +37,7 @@ const content = [
 function KeyProblems() {
   return (
     <section
-      id="Issues solved by CleverBook"
+      id="KeyFeatures"
       className="py-16 px-4 space-y-14 lg:space-y-4 lg:min-h-screen lg:flex lg:flex-col lg:justify-center lg:items-center lg:gap-12"
     >
       <h2 className="text-center lg:text-3xl font-bold tracking-tight font-poetsen">
