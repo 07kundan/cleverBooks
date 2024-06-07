@@ -99,7 +99,7 @@ function NavBar({ visible }) {
             <div className="space-x-6">
               <button>Login</button>
               <button className="px-6 py-1.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full">
-                Lit up borders
+                Contact us
               </button>
             </div>
           </>
